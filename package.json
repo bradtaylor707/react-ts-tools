@@ -4,7 +4,8 @@
   "description": "My utils collection",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --debug-check src && prettier --write src"
   },
   "author": "bradtaylor707@gmail.com",
   "license": "ISC",
