@@ -1,0 +1,11 @@
+{
+  "name": "utools",
+  "version": "0.0.1",
+  "description": "My utils collection",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bradtaylor707@gmail.com",
+  "license": "ISC"
+}
