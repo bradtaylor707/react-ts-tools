@@ -10,7 +10,14 @@
   "author": "bradtaylor707@gmail.com",
   "license": "ISC",
   "devDependencies": {
+    "@types/lodash-es": "^4.17.12",
+    "@types/react": "^19.0.8",
     "prettier": "^3.5.0",
     "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.21",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   }
 }
