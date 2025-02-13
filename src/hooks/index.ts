@@ -1,7 +1,10 @@
 import { useCallback, useEffect, useMemo } from "react";
+import { Nullable } from "../utils";
+
+export type Timeout = ReturnType<typeof setTimeout>;
 
 export function useSetTimeout() {
-  const timeouts = useMemo(() => new Set<number>(), []);
+  const timeouts = useMemo(() => new Set<Timeout>(), []);
 
   const addTimeout = useCallback((fn: () => void, ms?: number) => {
     const timeout = setTimeout(fn, ms);
@@ -11,7 +14,7 @@ export function useSetTimeout() {
     return timeout;
   }, []);
 
-  const removeTimeout = useCallback((timeout?: number) => {
+  const removeTimeout = useCallback((timeout?: Nullable<Timeout>) => {
     if (timeout != null) {
       return clearTimeout(timeout);
     }
