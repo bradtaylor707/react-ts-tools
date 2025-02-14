@@ -15,13 +15,12 @@ export function useSetTimeout() {
   }, []);
 
   const removeTimeout = useCallback((timeout?: Nullable<Timeout>) => {
-    if (timeout != null) {
-      return clearTimeout(timeout);
+    const actual = timeout ?? Array.from(timeouts).pop();
+
+    if (actual != null) {
+      clearTimeout(actual);
+      timeouts.delete(actual);
     }
-
-    const mostRecent = Array.from(timeouts).pop();
-
-    return clearTimeout(mostRecent);
   }, []);
 
   useEffect(() => {
