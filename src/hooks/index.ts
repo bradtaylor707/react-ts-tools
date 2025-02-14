@@ -1,1 +1,1 @@
-export * from ".//use-set-timeout";
+export * from "./use-set-timeout";
