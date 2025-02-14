@@ -12,7 +12,7 @@ export function filterNotNil<ItemT>(arr: ItemT[]) {
 
 export type Nullable<T> = T | null | undefined;
 
-export function safe<T>(value: Nullable<T>, fallback: T) {
+export function safe<TargetT>(value: Nullable<TargetT>, fallback: TargetT) {
   if (Array.isArray(fallback)) {
     return Array.isArray(value) ? value : [];
   }
