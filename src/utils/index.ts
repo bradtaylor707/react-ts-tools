@@ -27,3 +27,9 @@ export function safe<TargetT>(value: Nullable<TargetT>, fallback: TargetT) {
 
   return value ?? fallback;
 }
+
+export function wait(ms?: number) {
+  return new Promise<void>((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
