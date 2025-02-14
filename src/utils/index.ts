@@ -1,8 +1,8 @@
 export function filterBoolean<ItemT>(arr: ItemT[]) {
-  return safe(arr, []).filter(Boolean);
+  return safe(arr, []).filter(Boolean) as Array<NonNullable<ItemT>>;
 }
 
-function isNotNil(item: unknown) {
+export function isNotNil(item: unknown) {
   return item != null;
 }
 
