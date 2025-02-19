@@ -17,15 +17,18 @@ export function safe<TargetT>(value: Nullable<TargetT>, fallback: TargetT) {
     return Array.isArray(value) ? value : [];
   }
 
-  if (typeof fallback === "number") {
-    return typeof value === "number" ? value : fallback;
-  }
+  const fallbackType = typeof fallback;
 
-  if (typeof fallback === "string") {
-    return typeof value === "string" ? value : fallback;
-  }
+  switch (fallbackType) {
+    case "number":
+      return typeof value === "number" ? value : fallback;
 
-  return value ?? fallback;
+    case "string":
+      return typeof value === "string" ? value : fallback;
+
+    default:
+      return value ?? fallback;
+  }
 }
 
 export * from "./wait";
